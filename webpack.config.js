@@ -6,11 +6,12 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/infotecs_tz/',
   },
   module: {
     rules: [
       {
-        test: /\.js$|jsx/, 
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -36,5 +37,8 @@ module.exports = {
     },
     compress: true,
     port: 3000,
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
 };
