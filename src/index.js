@@ -6,10 +6,10 @@ import './index.css'
 
 
 const root = ReactDom.createRoot(document.getElementById('app'))
-
+const basename = process.env.NODE_ENV === 'production' ? '/infotecs_tz' : '/';
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/infotecs_tz">
+    <BrowserRouter basename={basename}>
       <App />
     </BrowserRouter>
   </React.StrictMode>
